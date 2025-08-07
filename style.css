@@ -1,0 +1,224 @@
+/* === Background Animation === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #d4f5d0, #c6e5b1, #b9db96, #d0f0c0);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Floating White Balls === */
+.floating-balls {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ball {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation: floatBall 25s linear infinite;
+  box-shadow: 0 0 20px white;
+}
+
+/* Position balls only on sides */
+.ball:nth-child(1) { top: 90%; left: 2%; animation-duration: 30s; }
+.ball:nth-child(2) { top: 80%; left: 95%; animation-duration: 22s; }
+.ball:nth-child(3) { top: 70%; left: 3%; animation-duration: 28s; }
+.ball:nth-child(4) { top: 60%; left: 97%; animation-duration: 26s; }
+.ball:nth-child(5) { top: 50%; left: 1%; animation-duration: 34s; }
+.ball:nth-child(6) { top: 40%; left: 98%; animation-duration: 32s; }
+.ball:nth-child(7) { top: 30%; left: 4%; animation-duration: 24s; }
+.ball:nth-child(8) { top: 20%; left: 96%; animation-duration: 36s; }
+
+@keyframes floatBall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-200px) scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-400px) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* === Navbar === */
+nav {
+  background-color: #2e7d32;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
+  justify-content: center;
+  padding: 15px;
+  animation: slideIn 1s ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #388e3c;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  background-color: #66bb6a;
+  transform: scale(1.1);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Content Layout === */
+header {
+  text-align: center;
+  padding: 40px 10px 20px;
+  color: #2e7d32;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* === Images === */
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Table === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #81c784;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  background-color: #e8f5e9;
+}
+
+/* === Typography === */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+p, li {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clicker-page {
+  font-family: "Segoe UI", sans-serif;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ===== Game Container ===== */
+.game-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Headers & Text ===== */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f8f8f8;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: #06680b;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #27db4e;
+}
+
+/* ===== Shop Section ===== */
+.shop {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+}

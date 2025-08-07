@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clicker Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="matcha-tea.html">Matcha Tea</a>
+    <a href="matcha-latte.html">Matcha Latte</a>
+    <a href="matcha-bubble-tea.html">Bubble Tea</a>
+    <a href="matcha-prep.html">Matcha Clicker</a>
+  </nav>
+
+  <div class="clicker-page">
+    <div class="floating-balls">
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+    </div>
+
+    <div class="game-container">
+      <h1>Matcha Game</h1>
+      <p>Matcha: <span id="click-count">0</span></p>
+      <p>Matcha per Click: <span id="ppc">1</span></p>
+      <button id="click-button">Generate Matcha</button>
+      <button id="reset-button">Reset</button>
+
+      <div class="shop">
+        <h2>Shop</h2>
+        <button id="buy-autoclicker">Whisk (Cost: 50)</button>
+        <p>Whisks: <span id="autoclicker-count">0</span></p>
+
+        <button id="upgrade-click">Stronger Powder (Cost: 20)</button>
+        <p>Powder Level: <span id="upgrade-level">1</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
